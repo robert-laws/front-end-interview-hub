@@ -1,5 +1,7 @@
 # Front-End Interview Hub
 
+[![Deploy to GitHub Pages](https://github.com/robert-laws/front-end-interview-hub/actions/workflows/deploy.yml/badge.svg)](https://github.com/robert-laws/front-end-interview-hub/actions/workflows/deploy.yml)
+
 A focused learning platform built around 14 real front-end interview questions. Each question is expanded into a self-contained module with in-depth explanations, code examples, interactive quizzes, and curated resources.
 
 ## Topics Covered
