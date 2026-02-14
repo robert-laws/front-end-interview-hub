@@ -31,10 +31,17 @@ html.dark .shiki span {
   background-color: var(--shiki-dark-bg) !important;
 }
 
-/* Code block padding for Shiki syntax highlighting */
+/* Code block styling for Shiki syntax highlighting */
 .shiki {
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.shiki code {
+  font-family: var(--font-mono);
 }
 
 /* Extended content section — visual separator and prose refinements */
