@@ -33,7 +33,7 @@ html.dark .shiki span {
 
 /* Code block styling for Shiki syntax highlighting */
 .shiki {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 2rem !important;
   margin: 0;
   font-size: 0.875rem;
   line-height: 1.7;
