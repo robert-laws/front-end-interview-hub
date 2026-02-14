@@ -32,15 +32,15 @@ html.dark .shiki span {
 }
 
 /* Code block styling for Shiki syntax highlighting */
-.shiki {
+.code-block-body pre {
   padding: 1.5rem 2rem !important;
-  margin: 0;
+  margin: 0 !important;
   font-size: 0.875rem;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
 
-.shiki code {
+.code-block-body pre code {
   font-family: var(--font-mono);
 }
 
