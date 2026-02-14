@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://robertlaws.github.io',
+  site: 'https://robert-laws.github.io',
   base: '/front-end-interview-hub/',
   output: 'static',
   vite: {
