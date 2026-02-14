@@ -1,0 +1,67 @@
+{
+  "moduleId": "q01-cms-experience",
+  "title": "CMS Experience Quiz",
+  "description": "Test your understanding of content management systems and their architectures.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q01-q1",
+      "type": "multiple-choice",
+      "question": "What is the primary difference between a traditional CMS and a headless CMS?",
+      "options": [
+        { "id": "a", "text": "Traditional CMS is free, headless CMS is paid" },
+        { "id": "b", "text": "A headless CMS separates content management from the presentation layer" },
+        { "id": "c", "text": "Traditional CMS uses databases, headless CMS uses files" },
+        { "id": "d", "text": "Headless CMS cannot handle images or media" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "A headless CMS decouples the content repository (back end) from the presentation layer (front end), delivering content via APIs. A traditional CMS bundles both together."
+    },
+    {
+      "id": "q01-q2",
+      "type": "multiple-choice",
+      "question": "Which of these is an example of a headless CMS?",
+      "options": [
+        { "id": "a", "text": "WordPress (default installation)" },
+        { "id": "b", "text": "Contentful" },
+        { "id": "c", "text": "Squarespace" },
+        { "id": "d", "text": "Wix" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Contentful is a headless CMS that provides content via APIs. WordPress can be used as a headless CMS with its REST API, but its default installation is a traditional CMS."
+    },
+    {
+      "id": "q01-q3",
+      "type": "true-false",
+      "question": "WordPress can only be used as a traditional CMS with server-rendered themes.",
+      "correctAnswer": false,
+      "explanation": "WordPress has a built-in REST API that allows it to function as a headless CMS, serving content to any front-end framework like React, Vue, or Astro."
+    },
+    {
+      "id": "q01-q4",
+      "type": "multiple-choice",
+      "question": "What is 'content modeling' in the context of a CMS?",
+      "options": [
+        { "id": "a", "text": "Designing the visual layout of content pages" },
+        { "id": "b", "text": "Defining the structure and types of content with fields and relationships" },
+        { "id": "c", "text": "Writing CSS for content display" },
+        { "id": "d", "text": "Creating 3D models for web content" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Content modeling is the process of defining content types, their fields, and relationships. For example, a 'Blog Post' type might have fields for title, body, author (relationship), and tags."
+    },
+    {
+      "id": "q01-q5",
+      "type": "multiple-choice",
+      "question": "When would a headless CMS be a better choice than a traditional CMS?",
+      "options": [
+        { "id": "a", "text": "When you need a simple blog with no developer involvement" },
+        { "id": "b", "text": "When you need to deliver content to multiple platforms (web, mobile app, kiosk)" },
+        { "id": "c", "text": "When the client needs a WYSIWYG page builder" },
+        { "id": "d", "text": "When you want the cheapest hosting option" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Headless CMS excels when content needs to be consumed by multiple front ends (web, mobile, IoT) because it delivers content via APIs that any platform can consume."
+    }
+  ]
+}

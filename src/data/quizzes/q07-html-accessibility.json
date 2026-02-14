@@ -1,0 +1,87 @@
+{
+  "moduleId": "q07-html-accessibility",
+  "title": "HTML Accessibility Quiz",
+  "description": "Test your understanding of web accessibility and WCAG compliance.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q07-q1",
+      "type": "multiple-choice",
+      "question": "What does WCAG stand for?",
+      "options": [
+        { "id": "a", "text": "Web Content Accessibility Guidelines" },
+        { "id": "b", "text": "Web Component Architecture Guide" },
+        { "id": "c", "text": "Website Compliance and Governance" },
+        { "id": "d", "text": "Web Content Application Group" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "WCAG stands for Web Content Accessibility Guidelines, published by the W3C as the international standard for web accessibility."
+    },
+    {
+      "id": "q07-q2",
+      "type": "multiple-choice",
+      "question": "What is the minimum contrast ratio required for normal text at WCAG Level AA?",
+      "options": [
+        { "id": "a", "text": "2:1" },
+        { "id": "b", "text": "3:1" },
+        { "id": "c", "text": "4.5:1" },
+        { "id": "d", "text": "7:1" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "WCAG AA requires a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text (18px+ bold or 24px+ regular)."
+    },
+    {
+      "id": "q07-q3",
+      "type": "true-false",
+      "question": "Adding role='button' to a <div> makes it fully accessible as a button.",
+      "correctAnswer": false,
+      "explanation": "role='button' only provides the semantic label. A div still lacks keyboard support (Enter/Space activation), focus management (tabindex), and the default button behaviors. Always use <button> when possible."
+    },
+    {
+      "id": "q07-q4",
+      "type": "multiple-choice",
+      "question": "What should the alt attribute be for a decorative image?",
+      "options": [
+        { "id": "a", "text": "A description of what the image shows" },
+        { "id": "b", "text": "The filename of the image" },
+        { "id": "c", "text": "An empty string (alt=\"\")" },
+        { "id": "d", "text": "The word 'decorative'" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "Decorative images should use alt='' (empty string). This tells screen readers to skip the image entirely, avoiding unnecessary announcements."
+    },
+    {
+      "id": "q07-q5",
+      "type": "multiple-choice",
+      "question": "Which HTML element should be used to connect a label to a form input?",
+      "options": [
+        { "id": "a", "text": "<span> with a class" },
+        { "id": "b", "text": "<label> with a for attribute matching the input's id" },
+        { "id": "c", "text": "<div> with aria-label" },
+        { "id": "d", "text": "<p> placed above the input" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The <label> element with a 'for' attribute matching the input's 'id' creates a programmatic association that screen readers use. It also expands the click target to include the label text."
+    },
+    {
+      "id": "q07-q6",
+      "type": "true-false",
+      "question": "Automated accessibility testing tools can catch the majority (over 50%) of WCAG violations.",
+      "correctAnswer": false,
+      "explanation": "Automated tools typically catch only about 30-40% of accessibility issues. They can detect technical violations like missing alt text and low contrast, but cannot evaluate the quality of alt text, logical focus order, or usability of custom widgets."
+    },
+    {
+      "id": "q07-q7",
+      "type": "multiple-choice",
+      "question": "What does the 'first rule of ARIA' state?",
+      "options": [
+        { "id": "a", "text": "Always add ARIA roles to every element" },
+        { "id": "b", "text": "Use aria-label on all interactive elements" },
+        { "id": "c", "text": "Don't use ARIA if a native HTML element can do the job" },
+        { "id": "d", "text": "ARIA attributes must be added before semantic HTML" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "The first rule of ARIA is: if you can use a native HTML element with the semantics and behavior you require, do so. ARIA should only fill gaps where native HTML semantics don't exist."
+    }
+  ]
+}

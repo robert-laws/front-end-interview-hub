@@ -1,0 +1,87 @@
+{
+  "moduleId": "q05-grid-vs-flexbox",
+  "title": "Grid vs Flexbox Quiz",
+  "description": "Test your understanding of CSS Grid and Flexbox layout systems.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q05-q1",
+      "type": "multiple-choice",
+      "question": "Which layout system is best for two-dimensional layouts (rows AND columns)?",
+      "options": [
+        { "id": "a", "text": "Flexbox" },
+        { "id": "b", "text": "CSS Grid" },
+        { "id": "c", "text": "CSS Float" },
+        { "id": "d", "text": "CSS Position" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "CSS Grid is designed for two-dimensional layouts, controlling both rows and columns simultaneously. Flexbox works along a single axis."
+    },
+    {
+      "id": "q05-q2",
+      "type": "multiple-choice",
+      "question": "What does the 'fr' unit represent in CSS Grid?",
+      "options": [
+        { "id": "a", "text": "A fixed ratio of the viewport" },
+        { "id": "b", "text": "A fractional unit of available space" },
+        { "id": "c", "text": "A frame rate value" },
+        { "id": "d", "text": "A font-relative unit" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The 'fr' unit distributes remaining available space in the grid container proportionally after fixed-size tracks are accounted for."
+    },
+    {
+      "id": "q05-q3",
+      "type": "true-false",
+      "question": "The 'gap' property works only in CSS Grid, not in Flexbox.",
+      "correctAnswer": false,
+      "explanation": "The 'gap' property works in both CSS Grid and Flexbox in all modern browsers. It provides consistent spacing between items."
+    },
+    {
+      "id": "q05-q4",
+      "type": "multiple-choice",
+      "question": "Which property controls the main axis direction in Flexbox?",
+      "options": [
+        { "id": "a", "text": "justify-content" },
+        { "id": "b", "text": "align-items" },
+        { "id": "c", "text": "flex-direction" },
+        { "id": "d", "text": "flex-wrap" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "flex-direction controls the main axis: row (default), row-reverse, column, or column-reverse."
+    },
+    {
+      "id": "q05-q5",
+      "type": "multiple-choice",
+      "question": "What does repeat(auto-fit, minmax(200px, 1fr)) create?",
+      "options": [
+        { "id": "a", "text": "A fixed 3-column grid" },
+        { "id": "b", "text": "A responsive grid where columns are at least 200px wide" },
+        { "id": "c", "text": "A single-column layout" },
+        { "id": "d", "text": "A grid with 200px gaps between items" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "repeat(auto-fit, minmax(200px, 1fr)) creates a responsive grid where columns are minimum 200px wide and expand evenly to fill available space. No media queries needed."
+    },
+    {
+      "id": "q05-q6",
+      "type": "multiple-choice",
+      "question": "What is the shortest way to center an item both horizontally and vertically with Grid?",
+      "options": [
+        { "id": "a", "text": "justify-content: center; align-items: center;" },
+        { "id": "b", "text": "place-items: center;" },
+        { "id": "c", "text": "margin: auto;" },
+        { "id": "d", "text": "text-align: center; vertical-align: middle;" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "place-items: center is a shorthand that sets both align-items and justify-items to center, achieving perfect centering with a single property."
+    },
+    {
+      "id": "q05-q7",
+      "type": "true-false",
+      "question": "When flex items wrap to multiple lines, each line is laid out independently.",
+      "correctAnswer": true,
+      "explanation": "Flexbox is fundamentally one-dimensional. When items wrap, each line distributes space independently. For true grid alignment across rows, use CSS Grid instead."
+    }
+  ]
+}

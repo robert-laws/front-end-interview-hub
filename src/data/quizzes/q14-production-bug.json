@@ -1,0 +1,80 @@
+{
+  "moduleId": "q14-production-bug",
+  "title": "Production Bug Debugging Quiz",
+  "description": "Test your knowledge of debugging production-only issues.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q14-q1",
+      "type": "multiple-choice",
+      "question": "A bug appears in production but not on your local machine. What is the most common cause?",
+      "options": [
+        { "id": "a", "text": "Your local machine is broken" },
+        { "id": "b", "text": "Environment differences (browser version, OS, data, caching, network)" },
+        { "id": "c", "text": "The production server has malware" },
+        { "id": "d", "text": "The user is lying about the bug" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Environment differences are the most common cause: different browser versions, operating systems, screen sizes, cached assets, network conditions, or different data states between local and production."
+    },
+    {
+      "id": "q14-q2",
+      "type": "multiple-choice",
+      "question": "What information should you gather from the user who reported the bug?",
+      "options": [
+        { "id": "a", "text": "Just the error message" },
+        { "id": "b", "text": "Browser, OS, screen size, steps to reproduce, screenshots or video, and any error messages" },
+        { "id": "c", "text": "Their internet speed only" },
+        { "id": "d", "text": "Their email address to send them a fix" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Comprehensive bug reports include: browser and version, operating system, device/screen size, exact steps to reproduce, expected vs actual behavior, screenshots or video, and console errors if available."
+    },
+    {
+      "id": "q14-q3",
+      "type": "true-false",
+      "question": "If you can't reproduce a bug, it probably doesn't exist and can be closed.",
+      "correctAnswer": false,
+      "explanation": "Inability to reproduce doesn't mean the bug doesn't exist. It often means you haven't replicated the exact conditions. Investigate environment differences, data states, timing issues, and caching before dismissing a report."
+    },
+    {
+      "id": "q14-q4",
+      "type": "multiple-choice",
+      "question": "Which tool helps capture JavaScript errors from real users in production?",
+      "options": [
+        { "id": "a", "text": "ESLint" },
+        { "id": "b", "text": "Sentry or LogRocket" },
+        { "id": "c", "text": "Prettier" },
+        { "id": "d", "text": "webpack" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Sentry captures JavaScript errors with stack traces, browser info, and user context from production users. LogRocket adds session replay, showing exactly what the user did when the error occurred."
+    },
+    {
+      "id": "q14-q5",
+      "type": "multiple-choice",
+      "question": "What is a 'feature flag' and how does it help with production bugs?",
+      "options": [
+        { "id": "a", "text": "A visual indicator on the page showing which features are active" },
+        { "id": "b", "text": "A toggle that enables/disables features without redeploying, allowing quick rollback of problematic features" },
+        { "id": "c", "text": "A flag in the database that marks bugs as fixed" },
+        { "id": "d", "text": "A type of CSS class for feature sections" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Feature flags let you toggle features on/off without deploying new code. If a new feature causes a production bug, you can instantly disable it while you investigate, minimizing user impact."
+    },
+    {
+      "id": "q14-q6",
+      "type": "multiple-choice",
+      "question": "A user reports a layout bug on their iPad. What's the most effective debugging approach?",
+      "options": [
+        { "id": "a", "text": "Tell the user to use a desktop browser instead" },
+        { "id": "b", "text": "Use browser DevTools responsive mode to simulate the iPad viewport, and test with Safari's rendering engine" },
+        { "id": "c", "text": "Ignore it since iPads are a small percentage of users" },
+        { "id": "d", "text": "Add CSS that hides the broken section on iPads" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Use DevTools responsive mode to match the iPad's viewport and test with Safari/WebKit rendering (since iPads use Safari's engine). Also check for Safari-specific CSS differences like viewport units (svh vs vh) and flexbox quirks."
+    }
+  ]
+}

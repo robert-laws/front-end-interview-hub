@@ -1,0 +1,360 @@
+[
+  {
+    "id": "a11y",
+    "term": "a11y",
+    "fullName": "Accessibility",
+    "definition": "A numeronym for 'accessibility' (a + 11 characters + y). Refers to the practice of making websites usable by people with disabilities, including those using screen readers, keyboard navigation, or other assistive technologies.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "adr",
+    "term": "ADR",
+    "fullName": "Architecture Decision Record",
+    "definition": "A document that captures an important architectural or technical decision, including the context, options considered, decision made, and consequences. ADRs help future team members understand why things were built a certain way.",
+    "relatedModules": ["q09-code-documentation"],
+    "tags": ["professional"]
+  },
+  {
+    "id": "alt-text",
+    "term": "Alt Text",
+    "definition": "The text content of an image's alt attribute, providing a text alternative for screen readers and when images fail to load. Decorative images should use an empty alt attribute (alt=\"\").",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "aria",
+    "term": "ARIA",
+    "fullName": "Accessible Rich Internet Applications",
+    "definition": "A set of HTML attributes that define ways to make web content and applications more accessible. ARIA fills gaps where native HTML semantics don't exist, providing roles, states, and properties for assistive technologies.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "aria-live",
+    "term": "aria-live",
+    "definition": "An ARIA attribute that marks a region of the page as a 'live region' — content that updates dynamically will be announced by screen readers. Values: 'polite' (waits for idle), 'assertive' (interrupts immediately).",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "auto-fit",
+    "term": "auto-fit / auto-fill",
+    "definition": "CSS Grid functions used with repeat(). auto-fill creates as many tracks as fit, leaving empty tracks. auto-fit collapses empty tracks so items stretch to fill space. Both enable responsive grids without media queries.",
+    "relatedModules": ["q05-grid-vs-flexbox"],
+    "tags": ["css"]
+  },
+  {
+    "id": "bem",
+    "term": "BEM",
+    "fullName": "Block Element Modifier",
+    "definition": "A CSS naming convention that structures class names as .block__element--modifier. Block is the standalone component, Element is a child part, Modifier is a variation. Keeps specificity flat with single-class selectors.",
+    "relatedModules": ["q03-css-methodologies"],
+    "tags": ["css"]
+  },
+  {
+    "id": "cascade",
+    "term": "Cascade",
+    "definition": "The algorithm that determines which CSS rules apply when multiple rules target the same element. It considers importance (!important), specificity, source order, and CSS layers (@layer) to resolve conflicts.",
+    "relatedModules": ["q04-css-specificity"],
+    "tags": ["css"]
+  },
+  {
+    "id": "ci-cd",
+    "term": "CI/CD",
+    "fullName": "Continuous Integration / Continuous Deployment",
+    "definition": "Automated processes that build, test, and deploy code changes. CI merges and tests code frequently; CD automatically deploys passing builds. Tools include GitHub Actions, Jenkins, and GitLab CI.",
+    "relatedModules": ["q09-code-documentation", "q14-production-bug"],
+    "tags": ["professional", "debugging"]
+  },
+  {
+    "id": "color-contrast-ratio",
+    "term": "Color Contrast Ratio",
+    "definition": "The ratio between foreground and background colors. WCAG AA requires 4.5:1 for normal text and 3:1 for large text. Tools like WebAIM's contrast checker can measure this.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "computed-styles",
+    "term": "Computed Styles",
+    "definition": "The final CSS values applied to an element after all stylesheets, inheritance, and the cascade have been resolved. Viewable in browser DevTools' Computed panel, showing which rules win and which are overridden.",
+    "relatedModules": ["q04-css-specificity", "q06-debugging-broken-site"],
+    "tags": ["css", "debugging"]
+  },
+  {
+    "id": "content-modeling",
+    "term": "Content Modeling",
+    "definition": "The process of defining content types, their fields, and relationships in a CMS. For example, a 'Blog Post' type might have fields for title, body, author (relationship), and tags.",
+    "relatedModules": ["q01-cms-experience", "q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "conventional-commits",
+    "term": "Conventional Commits",
+    "definition": "A commit message convention using the format 'type(scope): description'. Types include feat, fix, docs, refactor, test, and chore. Enables automated changelog generation and semantic versioning.",
+    "relatedModules": ["q09-code-documentation"],
+    "tags": ["professional"]
+  },
+  {
+    "id": "css-custom-properties",
+    "term": "CSS Custom Properties",
+    "definition": "Native CSS variables declared with -- prefix (e.g., --color-primary: #6366f1) that cascade through the DOM and can be changed dynamically at runtime. The foundation of modern theming systems.",
+    "relatedModules": ["q03-css-methodologies", "q13-theme-customization"],
+    "tags": ["css"]
+  },
+  {
+    "id": "css-grid",
+    "term": "CSS Grid",
+    "definition": "A two-dimensional CSS layout system that controls both rows and columns simultaneously. Ideal for page-level layouts, dashboards, and designs requiring precise placement across both axes.",
+    "relatedModules": ["q05-grid-vs-flexbox"],
+    "tags": ["css"]
+  },
+  {
+    "id": "css-layer",
+    "term": "@layer",
+    "definition": "A CSS at-rule that declares explicit layers of cascade precedence. Styles in later-declared layers override earlier ones regardless of specificity within each layer, providing better control over style priority.",
+    "relatedModules": ["q04-css-specificity"],
+    "tags": ["css"]
+  },
+  {
+    "id": "custom-post-type",
+    "term": "Custom Post Type",
+    "definition": "A WordPress feature that extends content beyond Posts and Pages. Custom Post Types (e.g., Products, Events, Testimonials) get their own admin interface, URLs, and template hierarchy.",
+    "relatedModules": ["q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "design-tokens",
+    "term": "Design Tokens",
+    "definition": "Platform-agnostic style values (colors, spacing, typography) that define a design system. Can be expressed as CSS custom properties, JSON, or platform-specific formats. Tailwind's theme configuration is a design token system.",
+    "relatedModules": ["q03-css-methodologies", "q13-theme-customization"],
+    "tags": ["css"]
+  },
+  {
+    "id": "devtools",
+    "term": "DevTools",
+    "definition": "Browser developer tools (Chrome DevTools, Firefox DevTools) for inspecting HTML/CSS, debugging JavaScript, monitoring network requests, profiling performance, and testing accessibility.",
+    "relatedModules": ["q04-css-specificity", "q06-debugging-broken-site", "q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "feature-flags",
+    "term": "Feature Flags",
+    "definition": "Toggles that enable or disable features without deploying new code. Allow instant rollback of problematic features, gradual rollouts to subsets of users, and A/B testing in production.",
+    "relatedModules": ["q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "flexbox",
+    "term": "Flexbox",
+    "definition": "A one-dimensional CSS layout system that distributes space along a single axis (row or column). Ideal for navigation bars, card rows, centering content, and component-level alignment.",
+    "relatedModules": ["q05-grid-vs-flexbox"],
+    "tags": ["css"]
+  },
+  {
+    "id": "focus-management",
+    "term": "Focus Management",
+    "definition": "Programmatically controlling which element has keyboard focus, especially when content changes dynamically. Essential for modals (trap focus), SPAs (move focus on navigation), and dynamic content updates.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "fr-unit",
+    "term": "fr Unit",
+    "definition": "A fractional unit unique to CSS Grid that distributes remaining available space proportionally. For example, 1fr 2fr means the second column gets twice the space of the first.",
+    "relatedModules": ["q05-grid-vs-flexbox"],
+    "tags": ["css"]
+  },
+  {
+    "id": "gap",
+    "term": "gap",
+    "definition": "A CSS property that adds consistent spacing between grid or flex items without using margins. Works in both Grid and Flexbox. Avoids the edge-margin problem of traditional margin-based spacing.",
+    "relatedModules": ["q05-grid-vs-flexbox"],
+    "tags": ["css"]
+  },
+  {
+    "id": "git-bisect",
+    "term": "git bisect",
+    "definition": "A Git command that performs a binary search through commit history to find the exact commit that introduced a bug. You mark commits as 'good' or 'bad' and Git narrows down the culprit efficiently.",
+    "relatedModules": ["q06-debugging-broken-site"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "graphql",
+    "term": "GraphQL",
+    "definition": "A query language for APIs that lets clients request exactly the data they need. Used by headless CMS platforms and modern APIs as an alternative to REST, reducing over-fetching and under-fetching.",
+    "relatedModules": ["q01-cms-experience", "q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "gutenberg",
+    "term": "Gutenberg",
+    "definition": "WordPress's block editor where content is composed of individual blocks (paragraph, image, heading, custom blocks). Developers can create custom blocks using React and the @wordpress/blocks package.",
+    "relatedModules": ["q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "headless-cms",
+    "term": "Headless CMS",
+    "definition": "A content management system that separates the content repository (back end) from the presentation layer (front end), delivering content via APIs. Examples: Contentful, Strapi, Sanity.",
+    "relatedModules": ["q01-cms-experience"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "hooks-filters",
+    "term": "Hooks & Filters",
+    "definition": "WordPress extension mechanisms. Actions (hooks) execute code at specific lifecycle points. Filters modify data as it passes through the system. Both allow extending WordPress without modifying core files.",
+    "relatedModules": ["q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "important",
+    "term": "!important",
+    "definition": "A CSS declaration that overrides the normal cascade, giving a property the highest priority. Should be avoided in general code but has legitimate uses: utility classes, third-party overrides, and accessibility styles.",
+    "relatedModules": ["q04-css-specificity"],
+    "tags": ["css"]
+  },
+  {
+    "id": "intersection-observer",
+    "term": "IntersectionObserver",
+    "definition": "A browser API that efficiently detects when an element enters or exits the viewport. Used for lazy loading images, infinite scroll, scroll-triggered animations, and tracking element visibility.",
+    "relatedModules": ["q11-complex-ui-ux"],
+    "tags": ["css", "debugging"]
+  },
+  {
+    "id": "jsdoc",
+    "term": "JSDoc",
+    "definition": "A documentation standard for JavaScript using special comment syntax (/** */). Documents function parameters, return types, and descriptions. Enables IDE autocompletion and can generate documentation sites.",
+    "relatedModules": ["q09-code-documentation"],
+    "tags": ["professional"]
+  },
+  {
+    "id": "landmark-roles",
+    "term": "Landmark Roles",
+    "definition": "HTML5 elements like <header>, <nav>, <main>, <aside>, and <footer> that create navigable regions for screen reader users. Every page should have one <main> element. Replace the need for explicit ARIA role attributes.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "media-queries",
+    "term": "Media Queries",
+    "definition": "CSS rules that apply styles conditionally based on device characteristics like viewport width, height, orientation, or color scheme. The foundation of responsive web design.",
+    "relatedModules": ["q05-grid-vs-flexbox", "q13-theme-customization"],
+    "tags": ["css"]
+  },
+  {
+    "id": "oocss",
+    "term": "OOCSS",
+    "fullName": "Object-Oriented CSS",
+    "definition": "A CSS methodology that separates structure from skin and container from content. Encourages reusable, composable style objects rather than page-specific selectors.",
+    "relatedModules": ["q03-css-methodologies"],
+    "tags": ["css"]
+  },
+  {
+    "id": "pour-principles",
+    "term": "POUR Principles",
+    "definition": "The four principles of WCAG: Perceivable (content can be perceived by all users), Operable (interface is usable), Understandable (information is clear), Robust (works with current and future technologies).",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "rest-api",
+    "term": "REST API",
+    "definition": "An architectural style for web APIs using HTTP methods (GET, POST, PUT, DELETE) to interact with resources via URLs. WordPress has a built-in REST API that enables headless usage.",
+    "relatedModules": ["q01-cms-experience", "q12-cms-custom-modules"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "rollback",
+    "term": "Rollback",
+    "definition": "Reverting a deployment to a previous known-good version when a new release causes issues. Can be done via git revert, deployment platform rollback features, or restoring from a previous build artifact.",
+    "relatedModules": ["q06-debugging-broken-site", "q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "screen-reader",
+    "term": "Screen Reader",
+    "definition": "Assistive technology that reads screen content aloud for users with visual impairments. Major screen readers: VoiceOver (macOS/iOS), NVDA (Windows, free), JAWS (Windows, paid), TalkBack (Android).",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "semantic-html",
+    "term": "Semantic HTML",
+    "definition": "Using HTML elements for their intended meaning rather than appearance. <button> for actions, <nav> for navigation, <article> for content, <h1>-<h6> for headings. Carries implicit ARIA roles for assistive technologies.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "sentry",
+    "term": "Sentry",
+    "definition": "An error monitoring platform that captures JavaScript errors with stack traces, browser info, and user context from production users. Helps diagnose bugs that are difficult to reproduce locally.",
+    "relatedModules": ["q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "skip-navigation",
+    "term": "Skip Navigation",
+    "definition": "A hidden link at the top of the page that becomes visible on focus, allowing keyboard users to skip past repetitive navigation and jump directly to main content. Should be the first focusable element.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  },
+  {
+    "id": "smacss",
+    "term": "SMACSS",
+    "fullName": "Scalable and Modular Architecture for CSS",
+    "definition": "A CSS methodology that categorizes styles into five types: Base (defaults), Layout (page structure), Module (reusable components), State (dynamic states), and Theme (visual variations).",
+    "relatedModules": ["q03-css-methodologies"],
+    "tags": ["css"]
+  },
+  {
+    "id": "source-maps",
+    "term": "Source Maps",
+    "definition": "Files that map minified/bundled production code back to the original source code, enabling readable debugging in browser DevTools. Generated by build tools like Vite, webpack, and esbuild.",
+    "relatedModules": ["q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "specificity",
+    "term": "Specificity",
+    "definition": "A scoring system that determines which CSS rule wins when multiple rules target the same element. Scored as (inline, IDs, classes/attributes/pseudo-classes, elements/pseudo-elements). Higher scores win.",
+    "relatedModules": ["q04-css-specificity"],
+    "tags": ["css"]
+  },
+  {
+    "id": "staging-environment",
+    "term": "Staging Environment",
+    "definition": "A pre-production environment that mirrors the production setup, used for testing changes before they go live. Helps catch environment-specific bugs that don't appear in local development.",
+    "relatedModules": ["q14-production-bug"],
+    "tags": ["debugging"]
+  },
+  {
+    "id": "star-method",
+    "term": "STAR Method",
+    "definition": "An interview response framework: Situation (context), Task (your responsibility), Action (what you did), Result (the outcome). Provides structure for describing professional experiences clearly.",
+    "relatedModules": ["q02-proud-project", "q11-complex-ui-ux"],
+    "tags": ["professional"]
+  },
+  {
+    "id": "theme-json",
+    "term": "theme.json",
+    "definition": "WordPress's centralized theme configuration file that defines design tokens (colors, fonts, spacing), block editor features, and global/block-level styles without writing PHP or CSS.",
+    "relatedModules": ["q13-theme-customization"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "traditional-cms",
+    "term": "Traditional CMS",
+    "definition": "A content management system that bundles content management and presentation together, rendering pages server-side. Examples: WordPress (default), Drupal, Joomla. Content and templates are tightly coupled.",
+    "relatedModules": ["q01-cms-experience"],
+    "tags": ["cms"]
+  },
+  {
+    "id": "wcag",
+    "term": "WCAG",
+    "fullName": "Web Content Accessibility Guidelines",
+    "definition": "International standards for web accessibility published by the W3C. Three conformance levels: A (minimum), AA (standard target), AAA (highest). Most legal requirements reference Level AA.",
+    "relatedModules": ["q07-html-accessibility"],
+    "tags": ["accessibility"]
+  }
+]

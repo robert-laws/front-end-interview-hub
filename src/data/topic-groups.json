@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cms-theming",
+    "title": "CMS & Theming",
+    "description": "Content management systems, custom modules, and theme development.",
+    "color": "blue",
+    "moduleIds": ["q01-cms-experience", "q12-cms-custom-modules", "q13-theme-customization"],
+    "order": 1
+  },
+  {
+    "id": "experience-problem-solving",
+    "title": "Experience & Problem-Solving",
+    "description": "Showcasing your work and tackling complex challenges.",
+    "color": "amber",
+    "moduleIds": ["q02-proud-project", "q11-complex-ui-ux"],
+    "order": 2
+  },
+  {
+    "id": "css-fundamentals",
+    "title": "CSS Fundamentals & Methodologies",
+    "description": "Deep dives into CSS architecture, layout systems, and debugging.",
+    "color": "violet",
+    "moduleIds": ["q03-css-methodologies", "q04-css-specificity", "q05-grid-vs-flexbox"],
+    "order": 3
+  },
+  {
+    "id": "debugging-production",
+    "title": "Debugging & Production Workflows",
+    "description": "Strategies for diagnosing and resolving issues in development and production.",
+    "color": "red",
+    "moduleIds": ["q06-debugging-broken-site", "q14-production-bug"],
+    "order": 4
+  },
+  {
+    "id": "accessibility-html",
+    "title": "Accessibility & HTML Best Practices",
+    "description": "Building inclusive, standards-compliant web experiences.",
+    "color": "green",
+    "moduleIds": ["q07-html-accessibility"],
+    "order": 5
+  },
+  {
+    "id": "professional-practices",
+    "title": "Professional Practices",
+    "description": "Career growth, documentation, collaboration, and passion for the craft.",
+    "color": "teal",
+    "moduleIds": ["q08-keeping-up-with-tech", "q09-code-documentation", "q10-enjoy-frontend"],
+    "order": 6
+  }
+]

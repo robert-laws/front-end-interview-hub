@@ -1,0 +1,29 @@
+---
+interface Props {
+  questionNumber: number;
+  question: string;
+  whatItTests: string;
+}
+
+const { questionNumber, question, whatItTests } = Astro.props;
+---
+
+<header class="mb-10">
+  <div class="flex items-center gap-3 mb-4">
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 font-bold text-sm">
+      Q{questionNumber}
+    </span>
+    <span class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+      Module {questionNumber} of 14
+    </span>
+  </div>
+  <h1 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight">{question}</h1>
+  <div class="flex items-start gap-3 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+    <svg class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      <span class="font-medium text-gray-900 dark:text-gray-200">What this tests:</span> {whatItTests}
+    </p>
+  </div>
+</header>

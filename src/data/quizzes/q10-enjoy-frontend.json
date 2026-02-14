@@ -1,0 +1,61 @@
+{
+  "moduleId": "q10-enjoy-frontend",
+  "title": "Enjoying Front-End Development Quiz",
+  "description": "Test your understanding of how to articulate passion for front-end work.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q10-q1",
+      "type": "multiple-choice",
+      "question": "Why do interviewers ask 'What do you enjoy most about front-end development?'",
+      "options": [
+        { "id": "a", "text": "To test if you know enough technologies" },
+        { "id": "b", "text": "To assess your genuine passion, cultural fit, and what motivates you" },
+        { "id": "c", "text": "To see if you prefer front-end over back-end" },
+        { "id": "d", "text": "It's just a filler question with no significance" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "This question reveals your intrinsic motivation, what drives your professional growth, and how you'd fit with the team culture. Passionate developers tend to be more engaged and productive."
+    },
+    {
+      "id": "q10-q2",
+      "type": "true-false",
+      "question": "The best answer to this question is to list as many technologies as possible that you enjoy using.",
+      "correctAnswer": false,
+      "explanation": "Listing technologies is shallow. A stronger answer connects your enjoyment to the impact of your work, the creative process, or specific aspects like seeing users interact with what you build."
+    },
+    {
+      "id": "q10-q3",
+      "type": "multiple-choice",
+      "question": "Which response best demonstrates genuine passion for front-end development?",
+      "options": [
+        { "id": "a", "text": "I like that it pays well" },
+        { "id": "b", "text": "I enjoy the immediate visual feedback of seeing my code come to life and knowing that real users will interact with what I build" },
+        { "id": "c", "text": "I like all parts of it equally" },
+        { "id": "d", "text": "I enjoy it because my manager told me I'm good at it" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "This answer is specific, authentic, and connects personal enjoyment to the user impact. It shows the developer cares about the craft and the people who use their work."
+    },
+    {
+      "id": "q10-q4",
+      "type": "multiple-choice",
+      "question": "How can you make your answer to this question stand out?",
+      "options": [
+        { "id": "a", "text": "Give a one-word answer to seem confident" },
+        { "id": "b", "text": "Include a specific example or story that illustrates your passion" },
+        { "id": "c", "text": "Say you enjoy everything about it" },
+        { "id": "d", "text": "Compare front-end to back-end to show preference" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "A specific story or example makes your answer memorable and authentic. Instead of generic statements, describe a moment when you felt excited about a solution or proud of a user experience you created."
+    },
+    {
+      "id": "q10-q5",
+      "type": "true-false",
+      "question": "It's okay to mention challenges or frustrations alongside what you enjoy, as long as you frame them positively.",
+      "correctAnswer": true,
+      "explanation": "Acknowledging that you enjoy the challenge of cross-browser compatibility or debugging complex layouts shows maturity. It demonstrates you're realistic about the work while still finding it engaging."
+    }
+  ]
+}

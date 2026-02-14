@@ -1,0 +1,80 @@
+{
+  "moduleId": "q04-css-specificity",
+  "title": "CSS Specificity Quiz",
+  "description": "Test your understanding of CSS specificity, the cascade, and debugging techniques.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q04-q1",
+      "type": "multiple-choice",
+      "question": "Which selector has the highest specificity?",
+      "options": [
+        { "id": "a", "text": ".nav .link" },
+        { "id": "b", "text": "#header a" },
+        { "id": "c", "text": "nav a.active" },
+        { "id": "d", "text": "a:hover" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "#header a has specificity (1,0,1) — one ID and one element. .nav .link is (0,2,0), nav a.active is (0,1,2), and a:hover is (0,1,1). IDs always outweigh classes."
+    },
+    {
+      "id": "q04-q2",
+      "type": "multiple-choice",
+      "question": "What is the specificity of an inline style attribute?",
+      "options": [
+        { "id": "a", "text": "(0,0,1)" },
+        { "id": "b", "text": "(0,1,0)" },
+        { "id": "c", "text": "(1,0,0,0)" },
+        { "id": "d", "text": "Same as an ID selector" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "Inline styles have a specificity of (1,0,0,0), which is higher than any number of IDs, classes, or element selectors. Only !important can override an inline style."
+    },
+    {
+      "id": "q04-q3",
+      "type": "true-false",
+      "question": "Using !important is always bad practice and should never be used.",
+      "correctAnswer": false,
+      "explanation": "While !important should be avoided in general code, it has legitimate uses: utility classes (like .sr-only for screen readers), overriding third-party library styles you can't modify, and as a temporary debugging aid."
+    },
+    {
+      "id": "q04-q4",
+      "type": "multiple-choice",
+      "question": "When two selectors have the same specificity, which rule wins?",
+      "options": [
+        { "id": "a", "text": "The one that appears first in the stylesheet" },
+        { "id": "b", "text": "The one that appears last in the stylesheet" },
+        { "id": "c", "text": "The one with more element selectors" },
+        { "id": "d", "text": "It depends on the browser" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "When specificity is equal, the cascade rule of source order applies: the last declaration in the stylesheet wins. This is why order of CSS files and rules matters."
+    },
+    {
+      "id": "q04-q5",
+      "type": "multiple-choice",
+      "question": "Which browser DevTools feature is most useful for debugging specificity issues?",
+      "options": [
+        { "id": "a", "text": "The Network tab" },
+        { "id": "b", "text": "The Computed Styles panel showing which rules are applied/overridden" },
+        { "id": "c", "text": "The Performance tab" },
+        { "id": "d", "text": "The Application tab" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The Computed Styles panel in Elements/Inspector shows exactly which CSS rules are applied to an element, which are overridden (shown with strikethrough), and the specificity of each selector."
+    },
+    {
+      "id": "q04-q6",
+      "type": "multiple-choice",
+      "question": "What does the CSS @layer directive help with?",
+      "options": [
+        { "id": "a", "text": "Adding z-index layers to elements" },
+        { "id": "b", "text": "Creating CSS animations with keyframes" },
+        { "id": "c", "text": "Controlling the order of precedence between groups of styles" },
+        { "id": "d", "text": "Nesting CSS selectors" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "@layer allows you to declare explicit layers of cascade precedence. Styles in later-declared layers override earlier ones regardless of specificity within each layer, giving you control over which styles take priority."
+    }
+  ]
+}

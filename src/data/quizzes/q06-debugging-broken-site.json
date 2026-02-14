@@ -1,0 +1,67 @@
+{
+  "moduleId": "q06-debugging-broken-site",
+  "title": "Debugging a Broken Site Quiz",
+  "description": "Test your knowledge of systematic debugging approaches for broken deployments.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q06-q1",
+      "type": "multiple-choice",
+      "question": "What should be your first step when a website breaks after an update?",
+      "options": [
+        { "id": "a", "text": "Immediately rewrite the code from scratch" },
+        { "id": "b", "text": "Check the browser console and network tab for errors" },
+        { "id": "c", "text": "Email the entire team about the problem" },
+        { "id": "d", "text": "Delete the cache and hope it fixes itself" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The browser console and network tab provide immediate clues about what went wrong — JavaScript errors, failed API calls, missing resources, or HTTP status codes."
+    },
+    {
+      "id": "q06-q2",
+      "type": "multiple-choice",
+      "question": "Which git command helps you find the exact commit that introduced a bug?",
+      "options": [
+        { "id": "a", "text": "git log" },
+        { "id": "b", "text": "git blame" },
+        { "id": "c", "text": "git bisect" },
+        { "id": "d", "text": "git stash" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "git bisect performs a binary search through commit history, letting you quickly find the exact commit that introduced a regression by testing 'good' and 'bad' states."
+    },
+    {
+      "id": "q06-q3",
+      "type": "true-false",
+      "question": "Rolling back to the previous working version should always be the first action when a deployment breaks.",
+      "correctAnswer": false,
+      "explanation": "While rollback is sometimes necessary (especially for critical production issues), first quickly assess the severity and scope. Small issues might be faster to hotfix than to roll back, which may have its own risks."
+    },
+    {
+      "id": "q06-q4",
+      "type": "multiple-choice",
+      "question": "What does 'git diff HEAD~1' show you?",
+      "options": [
+        { "id": "a", "text": "The difference between the first and last commit" },
+        { "id": "b", "text": "All uncommitted changes in the working directory" },
+        { "id": "c", "text": "The changes introduced in the most recent commit" },
+        { "id": "d", "text": "The difference between two branches" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "HEAD~1 refers to the commit before the current one. git diff HEAD~1 shows all changes between the previous commit and the current commit."
+    },
+    {
+      "id": "q06-q5",
+      "type": "multiple-choice",
+      "question": "A site loads but shows a blank white page. Which is the most likely cause?",
+      "options": [
+        { "id": "a", "text": "CSS file is missing" },
+        { "id": "b", "text": "JavaScript error preventing the app from rendering" },
+        { "id": "c", "text": "The server is down" },
+        { "id": "d", "text": "The domain has expired" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "A blank white page (white screen of death) on an SPA typically indicates a JavaScript error that prevents the framework from mounting/rendering. Check the browser console for the error."
+    }
+  ]
+}
