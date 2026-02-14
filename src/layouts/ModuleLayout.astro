@@ -1,0 +1,33 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  moduleId: string;
+  questionNumber: number;
+}
+
+const { title, description, moduleId, questionNumber } = Astro.props;
+
+const breadcrumbs = [
+  { label: 'Home', href: import.meta.env.BASE_URL },
+  { label: 'Modules', href: `${import.meta.env.BASE_URL}modules` },
+  { label: `Q${questionNumber}: ${title}`, href: '#', current: true },
+];
+---
+
+<BaseLayout title={`Q${questionNumber}: ${title}`} description={description}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="min-w-0" data-module-id={moduleId}>
+      <slot />
+    </article>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ moduleId }}>
+  // Track module visit
+  localStorage.setItem(`feih-visited-${moduleId}`, 'true');
+</script>

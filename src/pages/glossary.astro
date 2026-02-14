@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import glossaryData from '../data/glossary.json';
+import modulesMeta from '../data/modules-meta.json';
+
+const sortedTerms = [...glossaryData].sort((a, b) => a.term.localeCompare(b.term));
+const letters = [...new Set(sortedTerms.map(t => t.term[0].toUpperCase()))].sort();
+
+function getModuleTitle(moduleId: string) {
+  const mod = modulesMeta.find((m: any) => m.id === moduleId);
+  return mod ? `Q${mod.questionNumber}: ${mod.title}` : moduleId;
+}
+
+function getModuleSlug(moduleId: string) {
+  const mod = modulesMeta.find((m: any) => m.id === moduleId);
+  return mod ? mod.slug : moduleId;
+}
+
+const tagColors: Record<string, string> = {
+  css: 'bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300',
+  accessibility: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  cms: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  debugging: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
+  professional: 'bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300',
+};
+---
+
+<BaseLayout title="Glossary" description="Key terms and definitions for front-end development concepts.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs items={[
+      { label: 'Home', href: import.meta.env.BASE_URL },
+      { label: 'Glossary', href: '#', current: true },
+    ]} />
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Glossary</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+      {sortedTerms.length} key terms from across all 14 modules.
+    </p>
+
+    <!-- Search -->
+    <div class="mb-6">
+      <input
+        type="search"
+        id="glossary-search"
+        placeholder="Search terms..."
+        class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+        aria-label="Search glossary terms"
+      />
+    </div>
+
+    <!-- Letter navigation -->
+    <nav class="flex flex-wrap gap-1 mb-8" aria-label="Alphabet navigation">
+      {letters.map(letter => (
+        <a
+          href={`#letter-${letter}`}
+          class="w-8 h-8 flex items-center justify-center rounded text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+        >
+          {letter}
+        </a>
+      ))}
+    </nav>
+
+    <!-- No results message -->
+    <p id="no-results" class="hidden text-gray-500 dark:text-gray-400 italic py-8 text-center">
+      No terms match your search.
+    </p>
+
+    <!-- Terms grouped by letter -->
+    <div id="glossary-list">
+      {letters.map(letter => {
+        const letterTerms = sortedTerms.filter(t => t.term[0].toUpperCase() === letter);
+        return (
+          <section id={`letter-${letter}`} class="mb-8 glossary-letter-section" data-letter={letter}>
+            <h2 class="text-xl font-bold mb-4 text-primary-600 dark:text-primary-400 border-b border-gray-200 dark:border-gray-800 pb-2">
+              {letter}
+            </h2>
+            <div class="space-y-4">
+              {letterTerms.map(term => (
+                <div
+                  class="glossary-term p-4 rounded-lg border border-gray-200 dark:border-gray-800"
+                  data-term={term.term.toLowerCase()}
+                  data-definition={term.definition.toLowerCase()}
+                >
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <div>
+                      <h3 class="font-semibold text-lg">{term.term}</h3>
+                      {term.fullName && (
+                        <p class="text-sm text-gray-500 dark:text-gray-400">{term.fullName}</p>
+                      )}
+                    </div>
+                    <div class="flex gap-1 flex-shrink-0">
+                      {term.tags.map((tag: string) => (
+                        <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${tagColors[tag] || 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-3">
+                    {term.definition}
+                  </p>
+                  {term.relatedModules.length > 0 && (
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="text-xs text-gray-400 dark:text-gray-500">Related:</span>
+                      {term.relatedModules.map((modId: string) => (
+                        <a
+                          href={`${import.meta.env.BASE_URL}modules/${getModuleSlug(modId)}`}
+                          class="text-xs text-primary-600 dark:text-primary-400 hover:underline"
+                        >
+                          {getModuleTitle(modId)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('glossary-search') as HTMLInputElement;
+  const terms = document.querySelectorAll('.glossary-term');
+  const letterSections = document.querySelectorAll('.glossary-letter-section');
+  const noResults = document.getElementById('no-results');
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    terms.forEach((term) => {
+      const el = term as HTMLElement;
+      const termText = el.dataset.term || '';
+      const defText = el.dataset.definition || '';
+      const matches = !query || termText.includes(query) || defText.includes(query);
+      el.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    // Hide empty letter sections
+    letterSections.forEach((section) => {
+      const visibleTerms = section.querySelectorAll('.glossary-term:not([style*="display: none"])');
+      (section as HTMLElement).style.display = visibleTerms.length > 0 ? '' : 'none';
+    });
+
+    if (noResults) {
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+  });
+</script>

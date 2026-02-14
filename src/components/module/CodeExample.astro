@@ -1,0 +1,49 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  title: string;
+  language: string;
+  code: string;
+  description: string;
+}
+
+const { title, language, code, description } = Astro.props;
+---
+
+<div class="my-6 rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
+  <div class="flex items-center justify-between px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{title}</span>
+    <button
+      class="copy-btn text-xs px-2.5 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      data-code={code}
+      aria-label={`Copy code: ${title}`}
+    >
+      Copy
+    </button>
+  </div>
+  <div class="overflow-x-auto">
+    <Code code={code.trim()} lang={language} themes={{ light: 'github-light', dark: 'github-dark' }} />
+  </div>
+  <div class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    {description}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = (btn as HTMLElement).dataset.code;
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      } catch {
+        btn.textContent = 'Failed';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      }
+    });
+  });
+</script>

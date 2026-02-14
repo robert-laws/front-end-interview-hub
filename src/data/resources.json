@@ -1,0 +1,264 @@
+{
+  "categories": [
+    {
+      "id": "css-layout",
+      "title": "CSS Layout & Architecture",
+      "resources": [
+        {
+          "title": "A Complete Guide to Flexbox",
+          "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+          "type": "article",
+          "description": "Visual reference for all Flexbox properties with examples.",
+          "relatedModules": ["q05-grid-vs-flexbox"]
+        },
+        {
+          "title": "A Complete Guide to CSS Grid",
+          "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+          "type": "article",
+          "description": "Comprehensive visual guide to CSS Grid properties and usage.",
+          "relatedModules": ["q05-grid-vs-flexbox"]
+        },
+        {
+          "title": "MDN: CSS Grid Layout",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+          "type": "documentation",
+          "description": "Official MDN documentation for CSS Grid with tutorials and references.",
+          "relatedModules": ["q05-grid-vs-flexbox"]
+        },
+        {
+          "title": "MDN: CSS Flexible Box Layout",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout",
+          "type": "documentation",
+          "description": "Official MDN documentation for Flexbox fundamentals.",
+          "relatedModules": ["q05-grid-vs-flexbox"]
+        },
+        {
+          "title": "BEM Methodology",
+          "url": "https://en.bem.info/methodology/",
+          "type": "documentation",
+          "description": "Official BEM documentation covering naming conventions and architecture.",
+          "relatedModules": ["q03-css-methodologies"]
+        },
+        {
+          "title": "Tailwind CSS Documentation",
+          "url": "https://tailwindcss.com/docs",
+          "type": "documentation",
+          "description": "Complete reference for Tailwind CSS utility classes and configuration.",
+          "relatedModules": ["q03-css-methodologies"]
+        },
+        {
+          "title": "MDN: Specificity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity",
+          "type": "documentation",
+          "description": "Detailed explanation of CSS specificity calculation rules.",
+          "relatedModules": ["q04-css-specificity"]
+        },
+        {
+          "title": "MDN: Using CSS Custom Properties",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties",
+          "type": "documentation",
+          "description": "Guide to CSS custom properties (variables) for theming and dynamic styles.",
+          "relatedModules": ["q03-css-methodologies", "q13-theme-customization"]
+        }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "resources": [
+        {
+          "title": "WebAIM - Web Accessibility In Mind",
+          "url": "https://webaim.org/",
+          "type": "resource",
+          "description": "Comprehensive accessibility resources, tools, and training materials.",
+          "relatedModules": ["q07-html-accessibility"]
+        },
+        {
+          "title": "WCAG 2.1 Quick Reference",
+          "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+          "type": "documentation",
+          "description": "Filterable quick reference for all WCAG 2.1 success criteria.",
+          "relatedModules": ["q07-html-accessibility"]
+        },
+        {
+          "title": "WAI-ARIA Authoring Practices",
+          "url": "https://www.w3.org/WAI/ARIA/apg/",
+          "type": "documentation",
+          "description": "Patterns and examples for building accessible widgets and components.",
+          "relatedModules": ["q07-html-accessibility"]
+        },
+        {
+          "title": "The A11Y Project",
+          "url": "https://www.a11yproject.com/",
+          "type": "resource",
+          "description": "Community-driven accessibility resource with checklist, patterns, and posts.",
+          "relatedModules": ["q07-html-accessibility"]
+        },
+        {
+          "title": "axe DevTools Browser Extension",
+          "url": "https://www.deque.com/axe/browser-extensions/",
+          "type": "tool",
+          "description": "Free browser extension for automated accessibility testing in DevTools.",
+          "relatedModules": ["q07-html-accessibility"]
+        },
+        {
+          "title": "WebAIM Contrast Checker",
+          "url": "https://webaim.org/resources/contrastchecker/",
+          "type": "tool",
+          "description": "Check color contrast ratios against WCAG AA and AAA requirements.",
+          "relatedModules": ["q07-html-accessibility"]
+        }
+      ]
+    },
+    {
+      "id": "cms-development",
+      "title": "CMS Development",
+      "resources": [
+        {
+          "title": "WordPress Developer Resources",
+          "url": "https://developer.wordpress.org/",
+          "type": "documentation",
+          "description": "Official WordPress developer documentation for themes, plugins, and APIs.",
+          "relatedModules": ["q01-cms-experience", "q12-cms-custom-modules", "q13-theme-customization"]
+        },
+        {
+          "title": "WordPress Block Editor Handbook",
+          "url": "https://developer.wordpress.org/block-editor/",
+          "type": "documentation",
+          "description": "Guide to building custom Gutenberg blocks and extending the block editor.",
+          "relatedModules": ["q12-cms-custom-modules"]
+        },
+        {
+          "title": "WordPress Theme.json Reference",
+          "url": "https://developer.wordpress.org/themes/global-settings-and-styles/",
+          "type": "documentation",
+          "description": "Reference for WordPress theme.json global settings and styles configuration.",
+          "relatedModules": ["q13-theme-customization"]
+        },
+        {
+          "title": "Contentful Documentation",
+          "url": "https://www.contentful.com/developers/docs/",
+          "type": "documentation",
+          "description": "Headless CMS developer docs for content modeling, APIs, and SDKs.",
+          "relatedModules": ["q01-cms-experience"]
+        },
+        {
+          "title": "Strapi Documentation",
+          "url": "https://docs.strapi.io/",
+          "type": "documentation",
+          "description": "Open-source headless CMS documentation for building content APIs.",
+          "relatedModules": ["q01-cms-experience"]
+        }
+      ]
+    },
+    {
+      "id": "debugging",
+      "title": "Debugging & DevTools",
+      "resources": [
+        {
+          "title": "Chrome DevTools Documentation",
+          "url": "https://developer.chrome.com/docs/devtools/",
+          "type": "documentation",
+          "description": "Official Chrome DevTools docs covering all panels and debugging features.",
+          "relatedModules": ["q04-css-specificity", "q06-debugging-broken-site", "q14-production-bug"]
+        },
+        {
+          "title": "Sentry Documentation",
+          "url": "https://docs.sentry.io/",
+          "type": "documentation",
+          "description": "Error monitoring platform docs for JavaScript error tracking in production.",
+          "relatedModules": ["q14-production-bug"]
+        },
+        {
+          "title": "Git Documentation - git bisect",
+          "url": "https://git-scm.com/docs/git-bisect",
+          "type": "documentation",
+          "description": "Official docs for using git bisect to find regression-introducing commits.",
+          "relatedModules": ["q06-debugging-broken-site"]
+        },
+        {
+          "title": "web.dev: Debugging JavaScript",
+          "url": "https://web.dev/articles/debug-javascript",
+          "type": "article",
+          "description": "Google's guide to debugging JavaScript with Chrome DevTools.",
+          "relatedModules": ["q06-debugging-broken-site", "q14-production-bug"]
+        }
+      ]
+    },
+    {
+      "id": "professional-growth",
+      "title": "Professional Growth",
+      "resources": [
+        {
+          "title": "Frontend Focus Newsletter",
+          "url": "https://frontendfoc.us/",
+          "type": "newsletter",
+          "description": "Weekly roundup of front-end news, articles, and tutorials.",
+          "relatedModules": ["q08-keeping-up-with-tech"]
+        },
+        {
+          "title": "CSS Weekly Newsletter",
+          "url": "https://css-weekly.com/",
+          "type": "newsletter",
+          "description": "Weekly CSS articles, tutorials, experiments, and tools.",
+          "relatedModules": ["q08-keeping-up-with-tech"]
+        },
+        {
+          "title": "Conventional Commits",
+          "url": "https://www.conventionalcommits.org/",
+          "type": "documentation",
+          "description": "Specification for structured commit messages enabling automated tooling.",
+          "relatedModules": ["q09-code-documentation"]
+        },
+        {
+          "title": "Storybook Documentation",
+          "url": "https://storybook.js.org/docs/",
+          "type": "documentation",
+          "description": "Component documentation and testing tool for UI development.",
+          "relatedModules": ["q09-code-documentation"]
+        }
+      ]
+    },
+    {
+      "id": "general-reference",
+      "title": "General Reference",
+      "resources": [
+        {
+          "title": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/",
+          "type": "documentation",
+          "description": "The gold standard for web platform documentation: HTML, CSS, JavaScript, and Web APIs.",
+          "relatedModules": []
+        },
+        {
+          "title": "Can I Use",
+          "url": "https://caniuse.com/",
+          "type": "tool",
+          "description": "Browser support tables for HTML, CSS, and JavaScript features.",
+          "relatedModules": []
+        },
+        {
+          "title": "web.dev",
+          "url": "https://web.dev/",
+          "type": "resource",
+          "description": "Google's resource for modern web development best practices and performance.",
+          "relatedModules": []
+        },
+        {
+          "title": "CSS-Tricks",
+          "url": "https://css-tricks.com/",
+          "type": "resource",
+          "description": "Articles, guides, and almanac covering CSS and front-end development topics.",
+          "relatedModules": []
+        },
+        {
+          "title": "Smashing Magazine",
+          "url": "https://www.smashingmagazine.com/",
+          "type": "resource",
+          "description": "In-depth articles on web design, development, and UX.",
+          "relatedModules": []
+        }
+      ]
+    }
+  ]
+}

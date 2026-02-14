@@ -1,0 +1,67 @@
+{
+  "moduleId": "q13-theme-customization",
+  "title": "Theme Customization Quiz",
+  "description": "Test your knowledge of theme development and customization workflows.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q13-q1",
+      "type": "multiple-choice",
+      "question": "What are 'design tokens' in the context of theming?",
+      "options": [
+        { "id": "a", "text": "Authentication tokens for design tools" },
+        { "id": "b", "text": "Platform-agnostic style values (colors, spacing, typography) that define a design system" },
+        { "id": "c", "text": "Special HTML tags for responsive design" },
+        { "id": "d", "text": "JavaScript variables used in CSS" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Design tokens are named values representing design decisions — colors, spacing, font sizes, shadows. They can be expressed as CSS custom properties, JSON, or platform-specific formats, ensuring consistency across a product."
+    },
+    {
+      "id": "q13-q2",
+      "type": "multiple-choice",
+      "question": "What is the advantage of using CSS custom properties for theming?",
+      "options": [
+        { "id": "a", "text": "They make CSS files smaller" },
+        { "id": "b", "text": "They can be updated dynamically at runtime, enabling features like dark mode" },
+        { "id": "c", "text": "They work without a browser" },
+        { "id": "d", "text": "They replace the need for classes" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "CSS custom properties cascade and can be changed at runtime using JavaScript or media queries. This makes them ideal for theming — switching from light to dark mode by updating a few root-level variables."
+    },
+    {
+      "id": "q13-q3",
+      "type": "true-false",
+      "question": "Starting a theme from scratch is always better than using a starter theme.",
+      "correctAnswer": false,
+      "explanation": "Starter themes provide tested foundations (accessibility, responsive patterns, CMS integrations) that save development time. Starting from scratch only makes sense for very unique requirements or when learning."
+    },
+    {
+      "id": "q13-q4",
+      "type": "multiple-choice",
+      "question": "In WordPress, what does theme.json configure?",
+      "options": [
+        { "id": "a", "text": "Database settings for the theme" },
+        { "id": "b", "text": "Global styles, color palettes, typography, spacing, and block editor settings" },
+        { "id": "c", "text": "Plugin compatibility settings" },
+        { "id": "d", "text": "Server-side caching rules" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "theme.json is WordPress's centralized theme configuration file. It defines design tokens (colors, fonts, spacing), block editor features (which blocks are available, custom templates), and global/block-level styles."
+    },
+    {
+      "id": "q13-q5",
+      "type": "multiple-choice",
+      "question": "What is the recommended approach for implementing dark mode in a theme?",
+      "options": [
+        { "id": "a", "text": "Create a completely separate CSS file for dark mode" },
+        { "id": "b", "text": "Use CSS custom properties with a class toggle (e.g., .dark) on the root element" },
+        { "id": "c", "text": "Use JavaScript to change every element's inline styles" },
+        { "id": "d", "text": "Use CSS filters to invert all colors" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "CSS custom properties on the root element, toggled by a class like .dark, is the most maintainable approach. You define color tokens once and swap them by changing the root class, affecting the entire page."
+    }
+  ]
+}

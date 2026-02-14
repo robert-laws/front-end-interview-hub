@@ -1,0 +1,148 @@
+---
+interface Props {
+  quizData: object;
+  moduleId: string;
+}
+
+const { quizData, moduleId } = Astro.props;
+---
+
+<section id="quiz" class="mb-12">
+  <h2 class="text-2xl font-bold mb-2">Quick Quiz / Self-Check</h2>
+  <p class="text-gray-600 dark:text-gray-400 mb-6">Test your understanding of the concepts covered in this module.</p>
+  <div
+    id="quiz-container"
+    data-quiz={JSON.stringify(quizData)}
+    data-module-id={moduleId}
+    class="space-y-6"
+  >
+    <noscript>
+      <p class="text-amber-600 dark:text-amber-400">JavaScript is required for the interactive quiz.</p>
+    </noscript>
+  </div>
+  <div id="quiz-results" class="hidden mt-6 p-6 rounded-lg border border-gray-200 dark:border-gray-800"></div>
+</section>
+
+<script>
+  function initQuiz() {
+    const container = document.getElementById('quiz-container');
+    if (!container || !container.dataset.quiz) return;
+
+    const quizData = JSON.parse(container.dataset.quiz);
+    const moduleId = container.dataset.moduleId;
+    const questions = quizData.questions;
+    if (!questions || questions.length === 0) return;
+
+    // Render questions
+    container.innerHTML = questions.map((q: any, index: number) => {
+      const optionsHTML = q.type === 'true-false'
+        ? `<div class="flex gap-4 mt-3">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="${q.id}" value="true" class="accent-primary-600">
+              <span>True</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="${q.id}" value="false" class="accent-primary-600">
+              <span>False</span>
+            </label>
+          </div>`
+        : `<div class="space-y-2 mt-3">
+            ${q.options.map((opt: any) => `
+              <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                <input type="radio" name="${q.id}" value="${opt.id}" class="mt-0.5 accent-primary-600">
+                <span class="text-sm">${opt.text}</span>
+              </label>
+            `).join('')}
+          </div>`;
+
+      return `
+        <div class="quiz-question p-5 rounded-lg border border-gray-200 dark:border-gray-800" data-question-id="${q.id}">
+          <p class="font-medium mb-1">
+            <span class="text-primary-600 dark:text-primary-400 text-sm">Question ${index + 1} of ${questions.length}</span>
+          </p>
+          <p class="font-medium">${q.question.replace(/\n/g, '<br>')}</p>
+          ${optionsHTML}
+          <div class="quiz-feedback hidden mt-3 p-3 rounded text-sm"></div>
+        </div>
+      `;
+    }).join('') + `
+      <button type="button" id="quiz-submit"
+        class="mt-4 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium transition-colors">
+        Check Answers
+      </button>
+    `;
+
+    document.getElementById('quiz-submit')?.addEventListener('click', () => {
+      let correct = 0;
+
+      questions.forEach((q: any) => {
+        const selected = (document.querySelector(`input[name="${q.id}"]:checked`) as HTMLInputElement)?.value;
+        const questionEl = document.querySelector(`[data-question-id="${q.id}"]`);
+        const feedbackEl = questionEl?.querySelector('.quiz-feedback') as HTMLElement;
+        if (!feedbackEl) return;
+
+        let isCorrect = false;
+        if (q.type === 'true-false') {
+          isCorrect = selected === String(q.correctAnswer);
+        } else {
+          isCorrect = selected === q.correctAnswer;
+        }
+
+        if (isCorrect) correct++;
+
+        feedbackEl.classList.remove('hidden');
+        feedbackEl.className = `quiz-feedback mt-3 p-3 rounded text-sm ${
+          isCorrect
+            ? 'bg-green-50 dark:bg-green-950/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800/50'
+            : 'bg-red-50 dark:bg-red-950/30 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800/50'
+        }`;
+        feedbackEl.innerHTML = `<p class="font-medium mb-1">${isCorrect ? 'Correct!' : 'Incorrect'}</p><p>${q.explanation}</p>`;
+
+        questionEl?.classList.remove('border-gray-200', 'dark:border-gray-800');
+        questionEl?.classList.add(
+          isCorrect ? 'border-green-300' : 'border-red-300',
+          isCorrect ? 'dark:border-green-700' : 'dark:border-red-700'
+        );
+      });
+
+      // Show results
+      const percentage = Math.round((correct / questions.length) * 100);
+      const passed = percentage >= (quizData.passingScore || 70);
+      const resultsEl = document.getElementById('quiz-results');
+      if (resultsEl) {
+        resultsEl.classList.remove('hidden');
+        resultsEl.innerHTML = `
+          <div class="text-center">
+            <p class="text-4xl font-bold ${passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}">${percentage}%</p>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">${correct} of ${questions.length} correct</p>
+            <p class="mt-1 text-sm font-medium ${passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}">
+              ${passed ? 'Passed! Great work.' : `Need ${quizData.passingScore || 70}% to pass. Review and try again!`}
+            </p>
+          </div>
+        `;
+      }
+
+      // Save score
+      if (moduleId) {
+        const storageKey = `feih-quiz-score-${moduleId}`;
+        const prev = parseInt(localStorage.getItem(storageKey) || '0', 10);
+        if (percentage > prev) {
+          localStorage.setItem(storageKey, String(percentage));
+        }
+        if (passed) {
+          localStorage.setItem(`feih-quiz-passed-${moduleId}`, 'true');
+        }
+      }
+
+      // Disable submit
+      const submitBtn = document.getElementById('quiz-submit') as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        submitBtn.textContent = 'Answers Submitted';
+      }
+    });
+  }
+
+  initQuiz();
+</script>

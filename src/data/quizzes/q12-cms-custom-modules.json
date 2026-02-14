@@ -1,0 +1,67 @@
+{
+  "moduleId": "q12-cms-custom-modules",
+  "title": "CMS Custom Modules Quiz",
+  "description": "Test your knowledge of building custom plugins and modules for content management systems.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q12-q1",
+      "type": "multiple-choice",
+      "question": "In WordPress, what is the difference between an 'action' and a 'filter'?",
+      "options": [
+        { "id": "a", "text": "Actions modify data, filters trigger events" },
+        { "id": "b", "text": "Actions execute code at specific points, filters modify data before it's used" },
+        { "id": "c", "text": "They are the same thing with different names" },
+        { "id": "d", "text": "Actions are for the admin, filters are for the front-end" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Actions (do_action/add_action) let you execute custom code at specific points in the WordPress lifecycle. Filters (apply_filters/add_filter) let you modify data as it passes through the system before it's rendered or saved."
+    },
+    {
+      "id": "q12-q2",
+      "type": "true-false",
+      "question": "Custom WordPress plugins should directly modify core WordPress files to add functionality.",
+      "correctAnswer": false,
+      "explanation": "Never modify core files — updates will overwrite your changes. WordPress provides hooks (actions and filters) specifically for extending functionality without touching core code."
+    },
+    {
+      "id": "q12-q3",
+      "type": "multiple-choice",
+      "question": "What is a WordPress 'Custom Post Type'?",
+      "options": [
+        { "id": "a", "text": "A special kind of blog comment" },
+        { "id": "b", "text": "A custom content type beyond posts and pages, like 'Products' or 'Events'" },
+        { "id": "c", "text": "A plugin that creates social media posts" },
+        { "id": "d", "text": "A type of WordPress theme" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Custom Post Types extend WordPress beyond 'Posts' and 'Pages' to handle any content structure — Products, Events, Testimonials, Portfolios, etc. Each gets its own admin interface, URLs, and template hierarchy."
+    },
+    {
+      "id": "q12-q4",
+      "type": "multiple-choice",
+      "question": "What is the Gutenberg block editor in WordPress?",
+      "options": [
+        { "id": "a", "text": "A code editor for PHP files" },
+        { "id": "b", "text": "A block-based content editor where content is composed of individual blocks" },
+        { "id": "c", "text": "A database management tool" },
+        { "id": "d", "text": "A CSS framework for WordPress themes" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Gutenberg is WordPress's block editor where content is built from individual blocks (paragraph, image, heading, custom blocks). Developers can create custom blocks using React and the @wordpress/blocks package."
+    },
+    {
+      "id": "q12-q5",
+      "type": "multiple-choice",
+      "question": "What should always be included when creating a custom CMS plugin?",
+      "options": [
+        { "id": "a", "text": "Animated loading screens" },
+        { "id": "b", "text": "Data sanitization, validation, and proper security nonces" },
+        { "id": "c", "text": "Integration with every social media platform" },
+        { "id": "d", "text": "Custom database tables for every feature" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Security is critical in CMS plugins. Always sanitize input (sanitize_text_field), validate data types, use nonces to prevent CSRF attacks, and check user capabilities before performing actions."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ModuleCard from '../../components/home/ModuleCard.astro';
+import modulesMeta from '../../data/modules-meta.json';
+import topicGroups from '../../data/topic-groups.json';
+
+const sortedGroups = [...topicGroups].sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title="All Modules" description="Browse all 14 front-end interview learning modules.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs items={[
+      { label: 'Home', href: import.meta.env.BASE_URL },
+      { label: 'Modules', href: '#', current: true },
+    ]} />
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">All Modules</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+      14 self-contained learning modules covering the core front-end interview topics.
+    </p>
+
+    {sortedGroups.map((group) => {
+      const groupModules = modulesMeta.filter(m => group.moduleIds.includes(m.id));
+      return (
+        <section class="mb-12">
+          <h2 class="text-xl font-bold mb-2">{group.title}</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">{group.description}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {groupModules.map((mod) => (
+              <ModuleCard {...mod} />
+            ))}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+</BaseLayout>

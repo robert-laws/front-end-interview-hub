@@ -1,0 +1,67 @@
+{
+  "moduleId": "q09-code-documentation",
+  "title": "Code Documentation Quiz",
+  "description": "Test your knowledge of documentation practices and team communication.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q09-q1",
+      "type": "multiple-choice",
+      "question": "When is an inline code comment most valuable?",
+      "options": [
+        { "id": "a", "text": "To describe what every line of code does" },
+        { "id": "b", "text": "To explain WHY a non-obvious decision was made" },
+        { "id": "c", "text": "To separate sections of code visually" },
+        { "id": "d", "text": "To mark code that you wrote versus others" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The best comments explain 'why' rather than 'what'. Code should be self-documenting for the 'what'. Comments should capture context, business rules, or non-obvious trade-offs that aren't apparent from the code itself."
+    },
+    {
+      "id": "q09-q2",
+      "type": "multiple-choice",
+      "question": "Which commit message follows the Conventional Commits format?",
+      "options": [
+        { "id": "a", "text": "Fixed the bug" },
+        { "id": "b", "text": "fix(auth): resolve token refresh race condition" },
+        { "id": "c", "text": "Update files" },
+        { "id": "d", "text": "WIP changes" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Conventional Commits uses the format 'type(scope): description'. The type indicates the kind of change (feat, fix, docs, refactor), scope indicates the area affected, and the description is imperative and concise."
+    },
+    {
+      "id": "q09-q3",
+      "type": "true-false",
+      "question": "A pull request description should only contain the ticket number, not a summary of changes.",
+      "correctAnswer": false,
+      "explanation": "Good PR descriptions include context (why the change was made), a summary of what changed, testing steps, and screenshots for UI changes. The ticket number provides context but isn't sufficient on its own."
+    },
+    {
+      "id": "q09-q4",
+      "type": "multiple-choice",
+      "question": "What is an ADR (Architecture Decision Record)?",
+      "options": [
+        { "id": "a", "text": "A performance monitoring tool" },
+        { "id": "b", "text": "A document that captures an important architectural decision, its context, and consequences" },
+        { "id": "c", "text": "A type of unit test" },
+        { "id": "d", "text": "An automated deployment report" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "ADRs document significant technical decisions with their context, options considered, and rationale. They help future team members understand why things were built a certain way."
+    },
+    {
+      "id": "q09-q5",
+      "type": "multiple-choice",
+      "question": "Which is the best indicator that code needs a comment?",
+      "options": [
+        { "id": "a", "text": "The function is longer than 10 lines" },
+        { "id": "b", "text": "You used a clever regex or workaround that someone would need context to understand" },
+        { "id": "c", "text": "The variable names are short" },
+        { "id": "d", "text": "The code uses a popular library" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Comments are valuable for non-obvious code: workarounds for browser bugs, complex regex patterns, performance optimizations with trade-offs, or business logic that can't be inferred from the code."
+    }
+  ]
+}

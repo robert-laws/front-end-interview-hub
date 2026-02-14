@@ -1,0 +1,61 @@
+{
+  "moduleId": "q02-proud-project",
+  "title": "Proud Project Quiz",
+  "description": "Test your understanding of how to effectively describe project experiences in interviews.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q02-q1",
+      "type": "multiple-choice",
+      "question": "What does the STAR method stand for in interview responses?",
+      "options": [
+        { "id": "a", "text": "Strategy, Technology, Architecture, Results" },
+        { "id": "b", "text": "Situation, Task, Action, Result" },
+        { "id": "c", "text": "Scope, Timeline, Approach, Review" },
+        { "id": "d", "text": "Summary, Technical, Analysis, Reflection" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "STAR stands for Situation (context), Task (your responsibility), Action (what you did), and Result (the outcome). It provides a structured way to describe experiences."
+    },
+    {
+      "id": "q02-q2",
+      "type": "true-false",
+      "question": "When describing a project, you should focus only on what went well and avoid mentioning challenges.",
+      "correctAnswer": false,
+      "explanation": "Discussing challenges and how you overcame them shows problem-solving skills and resilience. Interviewers value honest reflection over a perfect narrative."
+    },
+    {
+      "id": "q02-q3",
+      "type": "multiple-choice",
+      "question": "Which is the most effective way to describe your project's impact?",
+      "options": [
+        { "id": "a", "text": "It was a really great project and everyone loved it" },
+        { "id": "b", "text": "Page load time decreased by 40%, leading to a 15% increase in user engagement" },
+        { "id": "c", "text": "I used React, Node.js, and MongoDB" },
+        { "id": "d", "text": "The project was completed on time" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Quantifiable metrics make your impact concrete and memorable. Numbers like performance improvements, user engagement changes, or time savings are far more compelling than vague statements."
+    },
+    {
+      "id": "q02-q4",
+      "type": "multiple-choice",
+      "question": "When discussing a team project, how should you frame your contributions?",
+      "options": [
+        { "id": "a", "text": "Take credit for all the work to appear more capable" },
+        { "id": "b", "text": "Minimize your role to appear humble" },
+        { "id": "c", "text": "Clearly articulate your specific contributions while acknowledging the team" },
+        { "id": "d", "text": "Only discuss the technologies used, not individual contributions" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "Be specific about what you personally did ('I built the authentication flow' vs 'we built the app') while crediting team collaboration. This shows both ownership and teamwork."
+    },
+    {
+      "id": "q02-q5",
+      "type": "true-false",
+      "question": "Including technical decisions and trade-offs in your project description demonstrates deeper engineering thinking.",
+      "correctAnswer": true,
+      "explanation": "Explaining why you chose certain technologies or approaches (and what alternatives you considered) shows architectural thinking and mature decision-making."
+    }
+  ]
+}

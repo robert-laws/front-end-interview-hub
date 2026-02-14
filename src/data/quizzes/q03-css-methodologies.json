@@ -1,0 +1,67 @@
+{
+  "moduleId": "q03-css-methodologies",
+  "title": "CSS Methodologies Quiz",
+  "description": "Test your understanding of CSS methodologies and frameworks.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q03-q1",
+      "type": "multiple-choice",
+      "question": "In BEM naming, what does the double underscore (__) represent?",
+      "options": [
+        { "id": "a", "text": "A modifier of a block" },
+        { "id": "b", "text": "An element within a block" },
+        { "id": "c", "text": "A nested block" },
+        { "id": "d", "text": "A pseudo-element" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "The double underscore (__) connects a Block to its Element. For example, .card__title means 'title' is an element inside the 'card' block."
+    },
+    {
+      "id": "q03-q2",
+      "type": "multiple-choice",
+      "question": "What is the primary advantage of utility-first CSS like Tailwind?",
+      "options": [
+        { "id": "a", "text": "It eliminates the need for HTML classes" },
+        { "id": "b", "text": "It produces the smallest CSS bundles with no build step" },
+        { "id": "c", "text": "Styles are visible in the markup and unused styles are automatically removed" },
+        { "id": "d", "text": "It provides pre-built components out of the box" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "Tailwind's utility-first approach means styles are applied directly in HTML, making them visible and easy to change. Its build-time scanner removes unused classes for tiny production bundles."
+    },
+    {
+      "id": "q03-q3",
+      "type": "true-false",
+      "question": "In BEM, .card__body__title is a valid element name.",
+      "correctAnswer": false,
+      "explanation": "BEM elements should not be nested beyond one level. The correct name would be .card__title. The element name describes its role in the block, not the DOM hierarchy."
+    },
+    {
+      "id": "q03-q4",
+      "type": "multiple-choice",
+      "question": "What problem do CSS Modules solve?",
+      "options": [
+        { "id": "a", "text": "Reducing CSS file size" },
+        { "id": "b", "text": "Preventing global class name collisions" },
+        { "id": "c", "text": "Adding JavaScript to CSS" },
+        { "id": "d", "text": "Providing responsive breakpoints" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "CSS Modules automatically scope class names by generating unique identifiers at build time, preventing global naming conflicts between components."
+    },
+    {
+      "id": "q03-q5",
+      "type": "multiple-choice",
+      "question": "Which approach keeps CSS specificity the most consistently flat?",
+      "options": [
+        { "id": "a", "text": "Bootstrap with nested selectors" },
+        { "id": "b", "text": "BEM with single-class selectors" },
+        { "id": "c", "text": "Using IDs for styling" },
+        { "id": "d", "text": "Using !important on all styles" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "BEM uses single-class selectors for everything, keeping specificity uniformly low and predictable. This prevents specificity battles and makes overrides straightforward."
+    }
+  ]
+}

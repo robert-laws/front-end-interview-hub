@@ -1,0 +1,60 @@
+---
+interface Props {
+  id: string;
+  questionNumber: number;
+  slug: string;
+  title: string;
+  question: string;
+  shortDescription: string;
+  topicGroup: string;
+  difficulty: string;
+  estimatedMinutes: number;
+}
+
+const { questionNumber, slug, title, shortDescription, topicGroup, difficulty, estimatedMinutes } = Astro.props;
+
+const topicColors: Record<string, string> = {
+  'cms-theming': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  'experience-problem-solving': 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
+  'css-fundamentals': 'bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300',
+  'debugging-production': 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
+  'accessibility-html': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  'professional-practices': 'bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300',
+};
+
+const topicLabels: Record<string, string> = {
+  'cms-theming': 'CMS & Theming',
+  'experience-problem-solving': 'Experience',
+  'css-fundamentals': 'CSS',
+  'debugging-production': 'Debugging',
+  'accessibility-html': 'Accessibility',
+  'professional-practices': 'Professional',
+};
+
+const difficultyColors: Record<string, string> = {
+  beginner: 'text-green-600 dark:text-green-400',
+  intermediate: 'text-amber-600 dark:text-amber-400',
+  advanced: 'text-red-600 dark:text-red-400',
+};
+---
+
+<a
+  href={`${import.meta.env.BASE_URL}modules/${slug}`}
+  class="group block p-5 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-md transition-all"
+  data-topic-group={topicGroup}
+>
+  <div class="flex items-center justify-between mb-3">
+    <span class="text-sm font-bold text-primary-600 dark:text-primary-400">Q{questionNumber}</span>
+    <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${topicColors[topicGroup] || ''}`}>
+      {topicLabels[topicGroup] || topicGroup}
+    </span>
+  </div>
+  <h3 class="font-semibold text-lg mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+    {title}
+  </h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{shortDescription}</p>
+  <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500">
+    <span class={difficultyColors[difficulty] || ''}>{difficulty}</span>
+    <span>{estimatedMinutes} min</span>
+  </div>
+</a>

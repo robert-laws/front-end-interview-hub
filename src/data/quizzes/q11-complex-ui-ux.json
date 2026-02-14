@@ -1,0 +1,67 @@
+{
+  "moduleId": "q11-complex-ui-ux",
+  "title": "Complex UI/UX Problem Quiz",
+  "description": "Test your understanding of approaches to solving complex front-end challenges.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q11-q1",
+      "type": "multiple-choice",
+      "question": "What is the first step in solving a complex UI/UX problem?",
+      "options": [
+        { "id": "a", "text": "Start coding immediately to build momentum" },
+        { "id": "b", "text": "Clearly define the problem and understand the user's needs" },
+        { "id": "c", "text": "Choose the most advanced technology to solve it" },
+        { "id": "d", "text": "Look for a library that already solves it" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Before writing any code, you need to understand the problem thoroughly: who are the users, what are they trying to accomplish, what constraints exist, and what does success look like?"
+    },
+    {
+      "id": "q11-q2",
+      "type": "multiple-choice",
+      "question": "Which API is most appropriate for implementing infinite scroll?",
+      "options": [
+        { "id": "a", "text": "ResizeObserver" },
+        { "id": "b", "text": "IntersectionObserver" },
+        { "id": "c", "text": "MutationObserver" },
+        { "id": "d", "text": "window.onscroll" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "IntersectionObserver efficiently detects when a sentinel element enters the viewport, triggering the next data load. It's more performant than scroll event listeners because it runs off the main thread."
+    },
+    {
+      "id": "q11-q3",
+      "type": "true-false",
+      "question": "The best solution to a complex UI problem is always the most technically sophisticated one.",
+      "correctAnswer": false,
+      "explanation": "The best solution balances user needs, performance, maintainability, and development cost. Sometimes a simpler approach is more appropriate than a technically impressive one."
+    },
+    {
+      "id": "q11-q4",
+      "type": "multiple-choice",
+      "question": "When presenting a complex problem you solved in an interview, what should you emphasize?",
+      "options": [
+        { "id": "a", "text": "Only the final solution and technologies used" },
+        { "id": "b", "text": "Your thought process, trade-offs considered, and how you measured success" },
+        { "id": "c", "text": "How quickly you solved it" },
+        { "id": "d", "text": "How many lines of code you wrote" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Interviewers want to understand your problem-solving approach: how you break down complexity, evaluate trade-offs, iterate on solutions, and validate results. The process matters more than the final answer."
+    },
+    {
+      "id": "q11-q5",
+      "type": "multiple-choice",
+      "question": "Which technique helps make data tables usable on mobile devices?",
+      "options": [
+        { "id": "a", "text": "Making all text smaller to fit the screen" },
+        { "id": "b", "text": "Horizontal scrolling, stacking rows as cards, or prioritizing visible columns" },
+        { "id": "c", "text": "Hiding the table completely on mobile" },
+        { "id": "d", "text": "Using a fixed-width layout" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Responsive data tables can use several strategies: horizontal scroll with sticky first column, transforming rows into stacked cards, or showing only priority columns with a 'show more' toggle. The best approach depends on the data and user needs."
+    }
+  ]
+}

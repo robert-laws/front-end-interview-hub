@@ -1,0 +1,67 @@
+{
+  "moduleId": "q08-keeping-up-with-tech",
+  "title": "Keeping Up With Tech Quiz",
+  "description": "Test your knowledge of strategies for staying current in web development.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q08-q1",
+      "type": "multiple-choice",
+      "question": "Which approach is most effective for learning a new technology?",
+      "options": [
+        { "id": "a", "text": "Watching dozens of tutorial videos without building anything" },
+        { "id": "b", "text": "Building a small project that uses the technology to solve a real problem" },
+        { "id": "c", "text": "Reading the entire documentation before writing any code" },
+        { "id": "d", "text": "Waiting until the technology is 5+ years old before trying it" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Hands-on practice with a real project solidifies learning far more effectively than passive consumption. Building something forces you to understand concepts deeply."
+    },
+    {
+      "id": "q08-q2",
+      "type": "true-false",
+      "question": "You should adopt every new JavaScript framework that becomes popular to stay current.",
+      "correctAnswer": false,
+      "explanation": "Chasing every new tool leads to shallow knowledge. It's better to deeply understand fundamentals and selectively evaluate new technologies based on real project needs."
+    },
+    {
+      "id": "q08-q3",
+      "type": "multiple-choice",
+      "question": "Which is the most reliable source for web platform documentation?",
+      "options": [
+        { "id": "a", "text": "Stack Overflow answers" },
+        { "id": "b", "text": "MDN Web Docs" },
+        { "id": "c", "text": "Random blog posts" },
+        { "id": "d", "text": "Social media posts" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "MDN Web Docs is the gold standard for web platform documentation. It's maintained by Mozilla with contributions from browser vendors and is regularly updated and peer-reviewed."
+    },
+    {
+      "id": "q08-q4",
+      "type": "multiple-choice",
+      "question": "What is 'tutorial hell'?",
+      "options": [
+        { "id": "a", "text": "When tutorials have errors in them" },
+        { "id": "b", "text": "Endlessly following tutorials without building original projects or solving real problems" },
+        { "id": "c", "text": "When there are too many tutorials on a topic" },
+        { "id": "d", "text": "Tutorials that are too difficult to follow" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "Tutorial hell is the cycle of completing tutorials without developing the ability to build things independently. Breaking out requires attempting projects beyond your comfort zone."
+    },
+    {
+      "id": "q08-q5",
+      "type": "multiple-choice",
+      "question": "Which is the best way to evaluate whether a new technology is worth learning?",
+      "options": [
+        { "id": "a", "text": "Check how many GitHub stars it has" },
+        { "id": "b", "text": "See if influencers are talking about it" },
+        { "id": "c", "text": "Evaluate if it solves a real problem you face and has a healthy community and maintenance track record" },
+        { "id": "d", "text": "Only learn it if your company mandates it" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "Evaluate technologies based on: does it solve a real problem? Is it actively maintained? Does it have good documentation? Is there community support? What's the migration/adoption cost?"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from 'astro:content';
+import ModuleLayout from '../../layouts/ModuleLayout.astro';
+import QuestionHeader from '../../components/module/QuestionHeader.astro';
+import CoreExplanation from '../../components/module/CoreExplanation.astro';
+import KeyConcepts from '../../components/module/KeyConcepts.astro';
+import CodeExample from '../../components/module/CodeExample.astro';
+import PitfallsSection from '../../components/module/PitfallsSection.astro';
+import CaseStudy from '../../components/module/CaseStudy.astro';
+import QuizSection from '../../components/module/QuizSection.astro';
+import FurtherReading from '../../components/module/FurtherReading.astro';
+
+export async function getStaticPaths() {
+  const modules = await getCollection('modules');
+  return modules.map((mod) => ({
+    params: { slug: mod.data.id },
+    props: { module: mod },
+  }));
+}
+
+const { module } = Astro.props;
+const { data } = module;
+const { Content } = await render(module);
+
+// Load quiz data for this module
+let quizData = null;
+const quizFiles = import.meta.glob('../../data/quizzes/*.json', { eager: true });
+const quizKey = Object.keys(quizFiles).find(key => key.includes(data.id));
+if (quizKey) {
+  quizData = (quizFiles[quizKey] as any).default;
+}
+---
+
+<ModuleLayout
+  title={data.title}
+  description={data.coreExplanation.summary}
+  moduleId={data.id}
+  questionNumber={data.questionNumber}
+>
+  <QuestionHeader
+    questionNumber={data.questionNumber}
+    question={data.question}
+    whatItTests={data.whatItTests}
+  />
+
+  <CoreExplanation explanation={data.coreExplanation} />
+
+  <KeyConcepts concepts={data.keyConcepts} />
+
+  {data.codeExamples && data.codeExamples.length > 0 && (
+    <section id="code-examples" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Code Examples</h2>
+      {data.codeExamples.map((example) => (
+        <CodeExample
+          title={example.title}
+          language={example.language}
+          code={example.code}
+          description={example.description}
+        />
+      ))}
+    </section>
+  )}
+
+  <PitfallsSection pitfalls={data.pitfalls} />
+
+  <section id="case-studies" class="mb-12">
+    <h2 class="text-2xl font-bold mb-6">Real-World Application</h2>
+    {data.caseStudies.map((study) => (
+      <CaseStudy study={study} />
+    ))}
+  </section>
+
+  {/* Rendered Markdown body (extended prose) */}
+  <section id="extended-content" class="prose dark:prose-invert max-w-none mb-12">
+    <Content />
+  </section>
+
+  {quizData && (
+    <QuizSection quizData={quizData} moduleId={data.id} />
+  )}
+
+  <FurtherReading links={data.furtherReading} />
+</ModuleLayout>

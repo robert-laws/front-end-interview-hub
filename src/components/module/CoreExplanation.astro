@@ -1,0 +1,28 @@
+---
+interface Props {
+  explanation: {
+    summary: string;
+    details: Array<{
+      heading: string;
+      content: string;
+    }>;
+  };
+}
+
+const { explanation } = Astro.props;
+---
+
+<section id="core-explanation" class="mb-12">
+  <h2 class="text-2xl font-bold mb-4">Core Explanation</h2>
+  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+    {explanation.summary}
+  </p>
+  <div class="space-y-6">
+    {explanation.details.map((detail) => (
+      <div class="pl-4 border-l-2 border-primary-300 dark:border-primary-700">
+        <h3 class="font-semibold text-lg mb-2">{detail.heading}</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{detail.content}</p>
+      </div>
+    ))}
+  </div>
+</section>
