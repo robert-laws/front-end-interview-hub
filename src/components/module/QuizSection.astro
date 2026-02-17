@@ -24,6 +24,10 @@ const { quizData, moduleId } = Astro.props;
 </section>
 
 <script>
+  function escapeHTML(str: string): string {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
   function initQuiz() {
     const container = document.getElementById('quiz-container');
     if (!container || !container.dataset.quiz) return;
@@ -50,7 +54,7 @@ const { quizData, moduleId } = Astro.props;
             ${q.options.map((opt: any) => `
               <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
                 <input type="radio" name="${q.id}" value="${opt.id}" class="mt-0.5 accent-primary-600">
-                <span class="text-sm">${opt.text}</span>
+                <span class="text-sm">${escapeHTML(opt.text)}</span>
               </label>
             `).join('')}
           </div>`;
@@ -60,7 +64,7 @@ const { quizData, moduleId } = Astro.props;
           <p class="font-medium mb-1">
             <span class="text-primary-600 dark:text-primary-400 text-sm">Question ${index + 1} of ${questions.length}</span>
           </p>
-          <p class="font-medium">${q.question.replace(/\n/g, '<br>')}</p>
+          <p class="font-medium">${escapeHTML(q.question).replace(/\n/g, '<br>')}</p>
           ${optionsHTML}
           <div class="quiz-feedback hidden mt-3 p-3 rounded text-sm"></div>
         </div>
@@ -96,7 +100,7 @@ const { quizData, moduleId } = Astro.props;
             ? 'bg-green-50 dark:bg-green-950/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800/50'
             : 'bg-red-50 dark:bg-red-950/30 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800/50'
         }`;
-        feedbackEl.innerHTML = `<p class="font-medium mb-1">${isCorrect ? 'Correct!' : 'Incorrect'}</p><p>${q.explanation}</p>`;
+        feedbackEl.innerHTML = `<p class="font-medium mb-1">${isCorrect ? 'Correct!' : 'Incorrect'}</p><p>${escapeHTML(q.explanation)}</p>`;
 
         questionEl?.classList.remove('border-gray-200', 'dark:border-gray-800');
         questionEl?.classList.add(
