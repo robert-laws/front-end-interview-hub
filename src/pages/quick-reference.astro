@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+
+const modules = await getCollection('modules');
+const sorted = modules.sort((a, b) => a.data.questionNumber - b.data.questionNumber);
+---
+
+<BaseLayout title="Quick Reference" description="All 14 interview questions at a glance with key talking points.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs items={[
+      { label: 'Home', href: import.meta.env.BASE_URL },
+      { label: 'Quick Reference', href: '#', current: true },
+    ]} />
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Quick Reference</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+      All 14 questions at a glance. Use this to quickly review key talking points before an interview.
+    </p>
+
+    <div class="space-y-6">
+      {sorted.map((mod) => {
+        const d = mod.data;
+        const detailHeadings = d.coreExplanation.details.map(detail => detail.heading);
+        return (
+          <article class="p-5 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+            <div class="flex items-start gap-3 sm:gap-4 mb-3">
+              <span class="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-sm font-bold">
+                Q{d.questionNumber}
+              </span>
+              <h3 class="text-lg font-semibold leading-snug">
+                <a
+                  href={`${import.meta.env.BASE_URL}modules/${d.id}`}
+                  class="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                >
+                  {d.question}
+                </a>
+              </h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 ml-12">
+              {d.coreExplanation.summary}
+            </p>
+            <div class="flex flex-wrap gap-2 ml-12">
+              {detailHeadings.map((heading) => (
+                <span class="inline-block text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium">
+                  {heading}
+                </span>
+              ))}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
